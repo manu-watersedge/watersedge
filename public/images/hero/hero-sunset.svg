@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Sky Sunset Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D194B" />
+      <stop offset="35%" stop-color="#8B3A62" />
+      <stop offset="65%" stop-color="#DD6E42" />
+      <stop offset="85%" stop-color="#E89B51" />
+      <stop offset="100%" stop-color="#F4C47C" />
+    </linearGradient>
+
+    <!-- Ocean Glow Gradient -->
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F4C47C" stop-opacity="0.8" />
+      <stop offset="20%" stop-color="#D97736" />
+      <stop offset="60%" stop-color="#2B3A4E" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <!-- Floor Gradient -->
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="50%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <!-- Tablecloth Gradient -->
+    <radialGradient id="tableGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </radialGradient>
+
+    <!-- Warm Light Glow -->
+    <radialGradient id="warmGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#FF8C00" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#FF8C00" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1920" height="600" fill="url(#skyGrad)" />
+  
+  <!-- Sun Glow Horizon -->
+  <circle cx="1000" cy="520" r="180" fill="url(#warmGlow)" />
+
+  <!-- Ocean Lagoon -->
+  <rect y="500" width="1920" height="200" fill="url(#oceanGrad)" />
+
+  <!-- Balcony Deck Terrace -->
+  <polygon points="0,680 1920,640 1920,1080 0,1080" fill="url(#floorGrad)" />
+  
+  <!-- Balcony Railing Line -->
+  <line x1="0" y1="680" x2="1920" y2="640" stroke="#94A3B8" stroke-width="4" stroke-opacity="0.4" />
+  <line x1="0" y1="695" x2="1920" y2="655" stroke="#64748B" stroke-width="3" stroke-opacity="0.3" />
+
+  <!-- Overhead String Lights Curved Cables -->
+  <path d="M 0,100 Q 480,220 960,180 Q 1440,240 1920,120" fill="none" stroke="#475569" stroke-width="2" />
+  <path d="M 0,220 Q 500,340 1000,290 Q 1500,350 1920,240" fill="none" stroke="#475569" stroke-width="1.5" />
+
+  <!-- Glowing Bulbs along strings -->
+  <g fill="#FFF" stroke="#F59E0B" stroke-width="2">
+    <circle cx="200" cy="140" r="6" fill="#FEF08A" />
+    <circle cx="450" cy="205" r="7" fill="#FEF08A" />
+    <circle cx="700" cy="200" r="6" fill="#FEF08A" />
+    <circle cx="950" cy="180" r="7" fill="#FEF08A" />
+    <circle cx="1200" cy="210" r="6" fill="#FEF08A" />
+    <circle cx="1450" cy="235" r="7" fill="#FEF08A" />
+    <circle cx="1700" cy="180" r="6" fill="#FEF08A" />
+
+    <circle cx="250" cy="270" r="6" fill="#FDE047" />
+    <circle cx="550" cy="325" r="7" fill="#FDE047" />
+    <circle cx="850" cy="305" r="6" fill="#FDE047" />
+    <circle cx="1150" cy="310" r="7" fill="#FDE047" />
+    <circle cx="1450" cy="340" r="6" fill="#FDE047" />
+    <circle cx="1750" cy="280" r="6" fill="#FDE047" />
+  </g>
+
+  <!-- Large Foreground Banquet Table (Right Side) -->
+  <ellipse cx="1450" cy="920" rx="380" ry="160" fill="url(#tableGrad)" stroke="#CBD5E1" stroke-width="4" />
+  <ellipse cx="1450" cy="910" rx="350" ry="140" fill="#FFFFFF" opacity="0.9" />
+
+  <!-- Centerpiece Floral & Candle Arrangement -->
+  <ellipse cx="1450" cy="880" rx="90" ry="40" fill="#99F6E4" opacity="0.6" />
+  <circle cx="1430" cy="870" r="30" fill="#F43F5E" opacity="0.8" />
+  <circle cx="1470" cy="875" r="35" fill="#FB7185" opacity="0.8" />
+  <circle cx="1450" cy="855" r="25" fill="#FDE68A" opacity="0.9" />
+
+  <!-- Candles Glow on Table -->
+  <circle cx="1410" cy="880" r="25" fill="url(#warmGlow)" />
+  <circle cx="1410" cy="880" r="5" fill="#FFF" />
+  
+  <circle cx="1490" cy="880" r="25" fill="url(#warmGlow)" />
+  <circle cx="1490" cy="880" r="5" fill="#FFF" />
+
+  <!-- Golden Plates & Fine Dining Settings -->
+  <ellipse cx="1200" cy="900" rx="25" ry="12" fill="#E2E8F0" stroke="#D4AF37" stroke-width="2" />
+  <ellipse cx="1320" cy="970" rx="28" ry="14" fill="#E2E8F0" stroke="#D4AF37" stroke-width="2" />
+  <ellipse cx="1580" cy="970" rx="28" ry="14" fill="#E2E8F0" stroke="#D4AF37" stroke-width="2" />
+  <ellipse cx="1700" cy="900" rx="25" ry="12" fill="#E2E8F0" stroke="#D4AF37" stroke-width="2" />
+
+  <!-- Secondary Background Banquet Table (Middle Right) -->
+  <ellipse cx="1080" cy="740" rx="180" ry="75" fill="url(#tableGrad)" />
+  <circle cx="1080" cy="725" r="35" fill="url(#warmGlow)" />
+
+  <!-- Wedding Arch Structure on Right Balcony Corner -->
+  <rect x="1450" y="380" width="16" height="300" fill="#78350F" rx="4" />
+  <rect x="1780" y="360" width="16" height="300" fill="#78350F" rx="4" />
+  <path d="M 1440,390 Q 1615,330 1790,370" fill="none" stroke="#78350F" stroke-width="12" />
+  
+  <!-- Arch Floral & Drapery Decor -->
+  <path d="M 1440,390 Q 1615,440 1790,370" fill="none" stroke="#FFF" stroke-width="18" opacity="0.8" />
+  <circle cx="1615" cy="355" r="45" fill="#F43F5E" opacity="0.9" />
+  <circle cx="1580" cy="365" r="35" fill="#FDA4AF" opacity="0.9" />
+  <circle cx="1650" cy="365" r="35" fill="#FEF08A" opacity="0.9" />
+
+  <!-- Palm Tree Silhouette Far Right -->
+  <path d="M 1880,650 Q 1850,400 1910,200" stroke="#0F172A" stroke-width="24" fill="none" />
+  <path d="M 1910,200 Q 1800,150 1700,200" stroke="#0F172A" stroke-width="10" fill="none" />
+  <path d="M 1910,200 Q 1820,250 1750,320" stroke="#0F172A" stroke-width="8" fill="none" />
+  <path d="M 1910,200 Q 1920,100 1880,0" stroke="#0F172A" stroke-width="10" fill="none" />
+</svg>
