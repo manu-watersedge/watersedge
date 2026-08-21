@@ -9,7 +9,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import JourneySection from "@/components/sections/JourneySection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/navigation/Footer";
-import BlinkingDots from "@/components/ui/BlinkingDots";
+import SpectralClouds from "@/components/ui/SpectralClouds";
 import FloatingCallButton from "@/components/ui/FloatingCallButton";
 
 export default function Home() {
@@ -18,27 +18,17 @@ export default function Home() {
       <main className="min-h-screen bg-[#080D1A] text-slate-100 selection:bg-[#C5A059] selection:text-[#080D1A]">
         <Navbar />
         <HeroSection />
-        {/* All post-hero sections sit on a single purple-navy gradient background with BlinkingDots overlay */}
-        <div
-          className="relative bg-cover bg-center bg-fixed overflow-hidden"
-          style={{ backgroundImage: `url('/images/section-bg.jpg')` }}
-        >
-          {/* Subtle dark overlay */}
-          <div className="absolute inset-0 bg-[#070F1E]/50 pointer-events-none z-0" />
-          
-          {/* Blinking Dots Background Overlay */}
-          <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
-            <BlinkingDots
-              dotSize={2}
-              spacing={28}
-              dotColor="#C5A059"
-              glowColor="rgba(197, 160, 89, 0.5)"
-              minOpacity={0.08}
-              maxOpacity={0.7}
-              blinkProbability={0.008}
-              speed={0.03}
-            />
-          </div>
+        
+        {/* Post-hero sections sit on dynamic Spectral Clouds background overlay */}
+        <div className="relative bg-[#070F1E] overflow-hidden">
+          {/* React Bits Pro Spectral Clouds Component Overlay */}
+          <SpectralClouds
+            cloudColor="#070F1E"
+            spectralColor1="#C5A059"
+            spectralColor2="#38BDF8"
+            speed={0.8}
+            density={1.2}
+          />
 
           <div className="relative z-10">
             <AboutSection />

@@ -24,11 +24,6 @@ const flowingMenuItems: FlowingMenuItem[] = [
     image: "/images/photos/Venu_Exterior_Interior/RoofTop (12)JPG.webp",
   },
   {
-    link: "#experiences",
-    text: "Experiences",
-    image: "/images/photos/Wedding_Event_Setup/wedding (4).webp",
-  },
-  {
     link: "#gallery",
     text: "Gallery",
     image: "/images/photos/CorporateEvents/seminar room (2).webp",

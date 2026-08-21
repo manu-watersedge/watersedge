@@ -5,11 +5,8 @@ import { ArrowRight, Share2, Globe, MessageCircle } from "lucide-react";
 const footerLinks = [
   { name: "About", href: "#about" },
   { name: "Venues", href: "#venues" },
-  { name: "Experiences", href: "#experiences" },
-  { name: "Services", href: "#services" },
   { name: "Gallery", href: "#gallery" },
   { name: "Packages", href: "#packages" },
-  { name: "Availability", href: "#availability" },
   { name: "Contact", href: "#contact" },
 ];
 
