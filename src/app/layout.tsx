@@ -36,6 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <head>
+        <link rel="preload" href="/images/hero/hero-bg.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/vdo-bg.mp4" as="video" type="video/mp4" />
+      </head>
       <body className="bg-[#080D1A] text-slate-100 antialiased font-sans">
         {children}
       </body>

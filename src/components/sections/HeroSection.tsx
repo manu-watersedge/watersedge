@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
 
@@ -39,12 +40,14 @@ export default function HeroSection() {
         style={{ y: bgY, scale: bgScale }}
       >
         <div className="relative w-full h-full">
-          {/* Background image provided by user without dark overlays */}
-          <div 
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/hero/hero-bg.png')`,
-            }}
+          <Image
+            src="/images/hero/hero-bg.webp"
+            alt="Water's Edge Maldives Waterfront Venue"
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover object-center"
           />
         </div>
       </motion.div>
