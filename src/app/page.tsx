@@ -9,8 +9,8 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import JourneySection from "@/components/sections/JourneySection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/navigation/Footer";
-import SpectralClouds from "@/components/ui/SpectralClouds";
 import FloatingCallButton from "@/components/ui/FloatingCallButton";
+import VideoBg from "@/components/ui/VideoBg";
 
 export default function Home() {
   return (
@@ -18,16 +18,17 @@ export default function Home() {
       <main className="min-h-screen bg-[#080D1A] text-slate-100 selection:bg-[#C5A059] selection:text-[#080D1A]">
         <Navbar />
         <HeroSection />
-        
-        {/* Post-hero sections sit on dynamic Spectral Clouds background overlay */}
-        <div className="relative bg-[#070F1E] overflow-hidden">
-          {/* React Bits Pro Spectral Clouds Component Overlay */}
-          <SpectralClouds
-            cloudColor="#070F1E"
-            spectralColor1="#C5A059"
-            spectralColor2="#38BDF8"
-            speed={0.8}
-            density={1.2}
+
+        {/* Post-hero sections — canvas video covers full height, watermark cropped */}
+        <div className="relative overflow-hidden">
+
+          {/* Canvas-rendered video: crops right 15% (watermark) without any CSS zoom */}
+          <VideoBg cropRight={0.15} />
+
+          {/* Overlay — keeps text readable */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "rgba(0,0,0,0.38)", zIndex: 1 }}
           />
 
           <div className="relative z-10">
