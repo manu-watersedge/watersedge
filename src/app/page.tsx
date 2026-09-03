@@ -14,38 +14,44 @@ import FloatingCallButton from "@/components/ui/FloatingCallButton";
 export default function Home() {
   return (
     <SmoothScrollProvider>
-      <main className="min-h-screen bg-[#080D1A] text-slate-100 selection:bg-[#C5A059] selection:text-[#080D1A]">
+      <main className="relative min-h-screen bg-[#080D1A] text-slate-100 selection:bg-[#C5A059] selection:text-[#080D1A]">
+        {/* Fixed Video Background (Positioned at root viewport for 100% Mobile & Desktop WebKit compatibility) */}
+        <div
+          className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
+          style={{
+            transform: "translate3d(0,0,0)",
+            WebkitTransform: "translate3d(0,0,0)",
+          }}
+        >
+          <video
+            src="/vdo-bg.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            style={{
+              transform: "translate3d(0,0,0)",
+              WebkitTransform: "translate3d(0,0,0)",
+            }}
+            className="w-[120%] h-full object-cover object-left"
+          />
+          {/* Seamless dark overlay for text legibility */}
+          <div className="absolute inset-0 bg-[#070F1E]/70" />
+        </div>
+
         <Navbar />
         <HeroSection />
 
-        {/* Post-hero sections with hardware-accelerated fixed video background */}
-        <div className="relative">
-          {/* Fixed video background — GPU accelerated 60fps on mobile & desktop, no tiling seams */}
-          <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-            <video
-              src="/vdo-bg.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="w-[115%] h-full object-cover object-left"
-            />
-            {/* Seamless dark overlay for optimal text contrast */}
-            <div
-              className="absolute inset-0 bg-[#070F1E]/65 backdrop-blur-[1px]"
-            />
-          </div>
-
-          <div className="relative z-10">
-            <AboutSection />
-            <VenuesSection />
-            <GallerySection />
-            <PackagesSection />
-            <TestimonialsSection />
-            <JourneySection />
-            <ContactSection />
-          </div>
+        {/* Post-hero sections sit above the fixed video background */}
+        <div className="relative z-10">
+          <AboutSection />
+          <VenuesSection />
+          <GallerySection />
+          <PackagesSection />
+          <TestimonialsSection />
+          <JourneySection />
+          <ContactSection />
         </div>
         <Footer />
         <FloatingCallButton />

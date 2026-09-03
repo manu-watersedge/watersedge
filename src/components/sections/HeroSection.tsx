@@ -32,7 +32,7 @@ export default function HeroSection() {
     <section
       id="home"
       ref={sectionRef}
-      className="relative w-full h-screen min-h-[600px] max-h-[1080px] flex flex-col justify-between overflow-hidden bg-[#080D1A]"
+      className="relative z-20 w-full h-screen min-h-[600px] max-h-[1080px] flex flex-col justify-between overflow-hidden bg-[#080D1A]"
     >
       {/* Background Visual Container - Parallax */}
       <motion.div
