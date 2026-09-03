@@ -195,7 +195,25 @@ const DriftWall: React.FC<DriftWallProps> = ({
   );
 
   useEffect(() => {
+    let isVisible = true;
+
+    if (typeof window !== "undefined" && "IntersectionObserver" in window && containerRef.current) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          isVisible = entry.isIntersecting;
+        },
+        { threshold: 0.05 }
+      );
+      observer.observe(containerRef.current);
+    }
+
     const animate = (ts: number) => {
+      if (!isVisible) {
+        lastTsRef.current = null;
+        rafRef.current = requestAnimationFrame(animate);
+        return;
+      }
+
       if (lastTsRef.current === null) lastTsRef.current = ts;
       const dt = Math.min(0.05, Math.max(0, ts - lastTsRef.current) / 1000);
       lastTsRef.current = ts;
@@ -242,7 +260,7 @@ const DriftWall: React.FC<DriftWallProps> = ({
       rafRef.current = null;
       lastTsRef.current = null;
     };
-  }, [baseVelocities, columnMeta, pauseOnHover, parallax, reduced, applyPlaneTransform]);
+  }, [reduced, columnMeta, baseVelocities, pauseOnHover, parallax, applyPlaneTransform]);
 
   const activate = useCallback((id: string, index: number) => {
     activeIdRef.current = id;

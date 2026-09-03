@@ -15,29 +15,29 @@ export default function Home() {
   return (
     <SmoothScrollProvider>
       <main className="relative min-h-screen bg-[#080D1A] text-slate-100 selection:bg-[#C5A059] selection:text-[#080D1A]">
-        {/* Fixed Video Background (Positioned at root viewport for 100% Mobile & Desktop WebKit compatibility) */}
-        <div
-          className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
-          style={{
-            transform: "translate3d(0,0,0)",
-            WebkitTransform: "translate3d(0,0,0)",
-          }}
-        >
-          <video
-            src="/vdo-bg.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            style={{
-              transform: "translate3d(0,0,0)",
-              WebkitTransform: "translate3d(0,0,0)",
-            }}
-            className="w-[120%] h-full object-cover object-left"
-          />
-          {/* Seamless dark overlay for text legibility */}
-          <div className="absolute inset-0 bg-[#070F1E]/70" />
+        {/* Fixed Video Background (Desktop/Tablet) + Lightweight Ocean Gradient (Mobile) */}
+        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+          {/* Desktop/Tablet: Live Video Background */}
+          <div className="hidden md:block w-full h-full relative">
+            <video
+              src="/vdo-bg.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              style={{
+                transform: "translate3d(0,0,0)",
+                WebkitTransform: "translate3d(0,0,0)",
+              }}
+              className="w-[120%] h-full object-cover object-left"
+            />
+            {/* Dark overlay for text legibility */}
+            <div className="absolute inset-0 bg-[#070F1E]/70" />
+          </div>
+
+          {/* Mobile: Ultra-lightweight 60fps Dark Ocean Gradient Background */}
+          <div className="block md:hidden w-full h-full bg-gradient-to-b from-[#070F1E] via-[#09152B] to-[#070F1E]" />
         </div>
 
         <Navbar />
