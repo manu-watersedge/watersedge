@@ -133,9 +133,7 @@ export default function VenuesSection() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.8 }}
-                        className={`w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105 ${
-                          venue.id === "WatersEdge_Building" ? "-rotate-90 scale-125" : ""
-                        }`}
+                        className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                         style={{ backgroundImage: `url('${currentPhoto?.path}')` }}
                       />
                     </AnimatePresence>
@@ -214,6 +212,7 @@ export default function VenuesSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            data-lenis-prevent
             className="fixed inset-0 z-50 bg-[#070D18]/95 backdrop-blur-xl flex flex-col justify-between overflow-y-auto p-4 sm:p-8"
           >
             {/* Modal Header */}
@@ -251,9 +250,7 @@ export default function VenuesSection() {
                       src={photo.path}
                       alt={`${activeModalCategory.name} Photo ${i + 1}`}
                       fill
-                      className={`object-cover transition-transform duration-700 group-hover:scale-110 ${
-                        activeModalCategory.id === "WatersEdge_Building" ? "-rotate-90 scale-125 group-hover:scale-150" : ""
-                      }`}
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

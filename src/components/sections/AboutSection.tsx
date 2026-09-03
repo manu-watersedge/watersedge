@@ -36,7 +36,7 @@ export default function AboutSection() {
                 src="/images/photos/Stage-Decorations/9W5A1689JPG.webp"
                 alt="Water's Edge Maldives - Luxury Floral Entrance Venue"
                 fill
-                className="object-cover -rotate-90 scale-125"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               {/* Bottom gradient for depth */}
