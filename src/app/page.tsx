@@ -10,7 +10,6 @@ import JourneySection from "@/components/sections/JourneySection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/navigation/Footer";
 import FloatingCallButton from "@/components/ui/FloatingCallButton";
-import VideoBg from "@/components/ui/VideoBg";
 
 export default function Home() {
   return (
@@ -19,17 +18,24 @@ export default function Home() {
         <Navbar />
         <HeroSection />
 
-        {/* Post-hero sections — canvas video covers full height, watermark cropped */}
-        <div className="relative overflow-hidden">
-
-          {/* Canvas-rendered video: crops right 15% (watermark) without any CSS zoom */}
-          <VideoBg cropRight={0.15} />
-
-          {/* Overlay — keeps text readable */}
-          <div
-            className="absolute inset-0"
-            style={{ background: "rgba(0,0,0,0.38)", zIndex: 1 }}
-          />
+        {/* Post-hero sections with hardware-accelerated fixed video background */}
+        <div className="relative">
+          {/* Fixed video background — GPU accelerated 60fps on mobile & desktop, no tiling seams */}
+          <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+            <video
+              src="/vdo-bg.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="w-[115%] h-full object-cover object-left"
+            />
+            {/* Seamless dark overlay for optimal text contrast */}
+            <div
+              className="absolute inset-0 bg-[#070F1E]/65 backdrop-blur-[1px]"
+            />
+          </div>
 
           <div className="relative z-10">
             <AboutSection />
